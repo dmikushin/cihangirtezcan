@@ -123,12 +123,14 @@ __global__ void counterWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBo
 		
 	}
 
+#ifndef NDEBUG
 	if (threadIndex == 1048575) {
 		printf("threadIndex : %d\n", threadIndex);
 		printf("Plaintext   : %08x %08x %08x %08x\n", pt0Init, pt1Init, pt2Init, pt3Init);
 		printf("Ciphertext  : %08x %08x %08x %08x\n", s0, s1, s2, s3);
 		printf("-------------------------------\n");
 	}
+#endif
 /*	pt[0] ^= s0;
 	pt[1] ^= s0;
 	pt[2] ^= s0;
@@ -190,12 +192,15 @@ __global__ void counterWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBo
 		if (pt3Init == MAX_U32) {			pt2Init++;		}
 		pt3Init++;
 	}
+
+#ifndef NDEBUG
 	if (threadIndex == 1048575) {
 		printf("threadIndex : %llu\n", threadIndex);
 		printf("Plaintext   : %08x %08x %08x %08x\n", pt0Init, pt1Init, pt2Init, pt3Init);
 		printf("Ciphertext  : %08x %08x %08x %08x\n", s0, s1, s2, s3);
 		printf("-------------------------------\n");
 	}
+#endif
 }
 __global__ void counterWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBoxCihangir2(u32* pt, u32* rk, u32* t0G, u32* t4G, u64* range, u8* SAES) {
 	u64 threadIndex = blockIdx.x * blockDim.x + threadIdx.x;
@@ -253,12 +258,15 @@ __global__ void counterWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBo
 		if (pt3Init == MAX_U32) { pt2Init++; }
 		pt3Init++;
 	}
+
+#ifndef NDEBUG
 	if (threadIndex == 1048575) {
 		printf("threadIndex : %llu\n", threadIndex);
 		printf("Plaintext   : %08x %08x %08x %08x\n", pt0Init, pt1Init, pt2Init, pt3Init);
 		printf("Ciphertext  : %08x %08x %08x %08x\n", s0, s1, s2, s3);
 		printf("-------------------------------\n");
 	}
+#endif
 }
 // CTR encryption with one table extended as 32 columns
 // 1 Table [256][32] -> arithmetic shift: __byte_perm function
@@ -357,11 +365,13 @@ __global__ void counterWithOneTableExtendedSharedMemoryBytePerm4ShiftedSbox(u32*
 		pt3Init++;
 	}
 
+#ifndef NDEBUG
 	if (threadIndex == 1048575) {
 		printf("Plaintext : %08x %08x %08x %08x\n", pt0Init, pt1Init, pt2Init, pt3Init);
 		printf("Ciphertext : %08x %08x %08x %08x\n", s0, s1, s2, s3);
 		printf("-------------------------------\n");
 	}
+#endif
 }
 
 __host__ int main128Ctr() {

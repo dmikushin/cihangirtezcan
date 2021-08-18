@@ -15,6 +15,10 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
+	cudaDeviceProp props;
+	cudaGetDeviceProperties(&props, 0);
+	printf("Running on %s\n", props.name);
+
 	int choice = atoi(argv[1]);
 
 	if (choice == 1) main128Ctr();

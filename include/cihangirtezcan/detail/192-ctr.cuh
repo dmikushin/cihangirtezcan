@@ -146,12 +146,13 @@ __global__ void counter192WithOneTableExtendedSharedMemoryBytePermPartlyExtended
 		pt3Init++;
 	}
 
+#ifndef NDEBUG
 	if (threadIndex == 1048575) {
 		printf("Plaintext : %08x %08x %08x %08x\n", pt0Init, pt1Init, pt2Init, pt3Init);
 		printf("Ciphertext : %08x %08x %08x %08x\n", s0, s1, s2, s3);
 		printf("-------------------------------\n");
 	}
-
+#endif
 }
 
 __host__ int main192Ctr() {
