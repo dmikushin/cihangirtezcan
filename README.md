@@ -1,9 +1,21 @@
-Breakthrough AES Performance on GPUs
+# AES implementation in CUDA with tables in shared memory
 
-These are CUDA optimizations of T-table based implementation of AES which contain zero bank conflicts.
+These are optimizations T-table based CUDA implementations of AES without bank conflicts.
 
-We achieved 
+## Building
+
+```
+mkdir build
+cd build
+cmake ..
+./test_cihangirtezcan
+```
+
+## Benchmarking
+
+Benchmarking results of the [original authors](https://github.com/cihangirtezcan/CUDA_AES):
 
 315.2 Gbps AES-128 encryption on a GTX 970
 
 878.6 Gbps AES-128 encryption on an RTX 2070 Super
+

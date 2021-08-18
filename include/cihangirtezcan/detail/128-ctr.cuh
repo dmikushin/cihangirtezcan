@@ -209,7 +209,7 @@ __global__ void counterWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBo
 		pt3Init++;
 	}
 	if (threadIndex == 1048575) {
-		printf("threadIndex : %d\n", threadIndex);
+		printf("threadIndex : %llu\n", threadIndex);
 		printf("Plaintext   : %08x %08x %08x %08x\n", pt0Init, pt1Init, pt2Init, pt3Init);
 		printf("Ciphertext  : %08x %08x %08x %08x\n", s0, s1, s2, s3);
 		printf("-------------------------------\n");
@@ -272,7 +272,7 @@ __global__ void counterWithOneTableExtendedSharedMemoryBytePermPartlyExtendedSBo
 		pt3Init++;
 	}
 	if (threadIndex == 1048575) {
-		printf("threadIndex : %I64d\n", threadIndex);
+		printf("threadIndex : %llu\n", threadIndex);
 		printf("Plaintext   : %08x %08x %08x %08x\n", pt0Init, pt1Init, pt2Init, pt3Init);
 		printf("Ciphertext  : %08x %08x %08x %08x\n", s0, s1, s2, s3);
 		printf("-------------------------------\n");
