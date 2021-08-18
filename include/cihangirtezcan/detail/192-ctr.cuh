@@ -1,22 +1,4 @@
-// System includes
-#include <stdio.h>
-#include <assert.h>
-#include <math.h>
-#include <ctime>
-
-// CUDA runtime
-#include <cuda_runtime.h>
-
-// Helper functions and utilities to work with CUDA
-//#include <helper_functions.h>
-//#include <helper_cuda.h>
-
-#include <device_launch_parameters.h>
-//#include <device_functions.h>
-
-// Custom header 
-//#include "kernel.h"
-
+#include <cstdio>
 
 // Key expansion from given key set, populate rk[52]
 __host__ void keyExpansion192(u32* key, u32* rk) {
